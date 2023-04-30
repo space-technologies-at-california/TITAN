@@ -29,7 +29,7 @@ class Controller:
     def calculatePosition(self):
         return 0
     
-    """Calculate roll and pitch at each time stamp"""
+    """Calculate roll and pitch at each time stamp from acc data"""
     def accelRollPitch(self):
         self.pitch = 180 * math.atan(self.ax/math.sqrt(self.ay**2 + self.az**2))/math.pi
         self.roll = 180 * math.atan(self.ay/math.sqrt(self.az**2 + self.ax**2))/math.pi

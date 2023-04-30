@@ -9,9 +9,9 @@ class Trajectory:
     def getData():
         return 0
 
-    def updateState():
-        numTimeStamps+=1
-        state.update(numTimeStamps, getData())
+    def updateState(self):
+        self.numTimeStamps+=1
+        self.state.update(numTimeStamps, getData())
 
     def obstacleDetector():
         return 0
