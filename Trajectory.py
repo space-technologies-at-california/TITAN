@@ -26,20 +26,44 @@ class Trajectory:
         servo2 = 0
         servo3 = 0
 
-        #If the angle to jump aligns w/ one of the 3 feet angles
+        DEFAULTPOS = #INSERT Calculation to find default based on leg size
+
+        #If the angle to jump aligns w/ one of the 3 feet
+        # 1) Knocks down the rover onto the feet angle
+        # 2) Raises the rover to the vertDegrees
         if (horDegrees = 0):
+            knockDownRover(1)
             servo1 = 90 - vertDegrees
-            servo2 = -90
-            servo3 = -90
+            servo2 = DEFAULTPOS
+            servo3 = DEFAULTPOS
+            return servo1, servo2, servo3
         if (horDegrees = 120):
-            servo1 = -90
+            knockDownRover(2)
+            servo1 = DEFAULTPOS
             servo2 = 90 - vertDegrees
-            servo3 = -90
+            servo3 = DEFAULTPOS
+            return servo1, servo2, servo3
         if (horDegrees = 240):
-            servo1 = -90
-            servo2 = -90
+            knockDownRover(3)
+            servo1 = DEFAULTPOS
+            servo2 = -DEFAULTPOS
             servo3 = 90 - vertDegrees
-        
+            return servo1, servo2, servo3
+
+
+        #If the angle does not align w/ one of the 3 feet
+        if(horDegrees < 60 or horDegrees > 300):
+
+        if(horDegrees > 60 and horDegrees < 180):
+            
+        if(horDegrees > 180 and horDegrees < 300):
+            
+
+
 
         return servo1, servo2, servo3
+
+    #A function which knocks down to rover to align with one of the 3 axes corresponding to a leg
+    def knockDownRover(servo):
+
    
